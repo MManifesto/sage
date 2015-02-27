@@ -18,6 +18,8 @@ class MMM_Roots
     var $_versionnum = "@core_version@";
 	var $menu_page;
 
+	var $shortcode_includes = ["row", "column"];
+
 	function MMM_Roots()
 	{
         $this->_settings = get_option($this->_settings_key) ? get_option($this->_settings_key) : array();
@@ -40,6 +42,8 @@ class MMM_Roots
 
 		//Custom CSS for taxonomy icons
 		add_action('admin_head', array(&$this, 'custom_dashboard_css'));
+
+		$this->load_shortcodes();
     }
 
     static function MMM_Roots_install() {
@@ -50,6 +54,13 @@ class MMM_Roots
 		//$this->_set_standart_values($themeSettings);
 		
 		add_option($_settings_key . "_versionnum", $_versionnum);
+	}
+
+	function load_shortcodes()
+	{
+		foreach ($this->shortcode_includes as $shortcode) {
+			add_shortcode( $shortcode, 'MmmToolsNamespace\\' . $shortcode );
+		}
 	}
 
 	function custom_dashboard_css()
