@@ -6,12 +6,12 @@ namespace Roots\Sage\Assets;
  * Scripts and stylesheets
  *
  * Enqueue stylesheets in the following order:
- * 1. /theme/dist/styles/main.css
+ * 1. /theme/assets/styles/main.css
  *
  * Enqueue scripts in the following order:
  * 1. Latest jQuery via Google CDN (if enabled in config.php)
- * 2. /theme/dist/scripts/modernizr.js
- * 3. /theme/dist/scripts/main.js
+ * 2. /theme/assets/scripts/modernizr.js
+ * 3. /theme/assets/scripts/main.js
  *
  * Google Analytics is loaded after enqueued scripts if:
  * - An ID has been defined in config.php
@@ -53,13 +53,13 @@ class JsonManifest {
 }
 
 function asset_path($filename) {
-  $dist_path = get_template_directory_uri() . '/dist/';
+  $dist_path = get_template_directory_uri() . '/assets/';
   $directory = dirname($filename) . '/';
   $file = basename($filename);
   static $manifest;
 
   if (empty($manifest)) {
-    $manifest_path = get_template_directory() . '/dist/assets.json';
+    $manifest_path = get_template_directory() . '/assets/assets.json';
     $manifest = new JsonManifest($manifest_path);
   }
 
@@ -130,7 +130,7 @@ function jquery_local_fallback($src, $handle = null) {
   static $add_jquery_fallback = false;
 
   if ($add_jquery_fallback) {
-    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/dist/scripts/jquery.js"><\/script>\')</script>' . "\n";
+    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/scripts/jquery.js"><\/script>\')</script>' . "\n";
     $add_jquery_fallback = false;
   }
 

@@ -251,6 +251,18 @@ gulp.task('wiredep', function() {
     .pipe(gulp.dest(path.source + 'styles'));
 });
 
+gulp.task('distClean', require('del').bind(null, ['dist/']));
+
+gulp.task('dist', ['distClean'], function() {
+
+  gulp.src(['./assets/**']).pipe(gulp.dest('dist/assets/'));
+  gulp.src('./lib/**').pipe(gulp.dest('dist/lib/'));
+  gulp.src('./templates/**').pipe(gulp.dest('dist/templates/'));
+  gulp.src('./*.php').pipe(gulp.dest('dist/'));
+  gulp.src('./style.css').pipe(gulp.dest('dist/'));
+  gulp.src('./screenshot.png').pipe(gulp.dest('dist/'));
+});
+
 // ### Gulp
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
 gulp.task('default', ['clean'], function() {
