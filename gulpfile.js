@@ -6,6 +6,7 @@ var browserSync = require('browser-sync');
 var gulp        = require('gulp');
 var lazypipe    = require('lazypipe');
 var merge       = require('merge-stream');
+var zip         = require('gulp-zip');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./dev-assets/manifest.json');
@@ -261,6 +262,13 @@ gulp.task('dist', ['distClean'], function() {
   gulp.src('./*.php').pipe(gulp.dest('dist/'));
   gulp.src('./style.css').pipe(gulp.dest('dist/'));
   gulp.src('./screenshot.png').pipe(gulp.dest('dist/'));
+
+});
+
+gulp.task('zip', function(){
+  gulp.src('dist/**')
+        .pipe(zip('mmm-sage.zip'))
+        .pipe(gulp.dest('./'));
 });
 
 // ### Gulp
