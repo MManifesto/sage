@@ -7,6 +7,8 @@ var gulp        = require('gulp');
 var lazypipe    = require('lazypipe');
 var merge       = require('merge-stream');
 var zip         = require('gulp-zip');
+var replace     = require('gulp-replace');
+var mmmsage     = require('./package.json');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./dev-assets/manifest.json');
@@ -257,7 +259,9 @@ gulp.task('distClean', require('del').bind(null, ['dist/']));
 gulp.task('dist', ['distClean'], function() {
 
   gulp.src(['./assets/**']).pipe(gulp.dest('dist/assets/'));
-  gulp.src('./lib/**').pipe(gulp.dest('dist/lib/'));
+  gulp.src('./lib/**').pipe(gulp.dest('dist/lib/'))
+    //.pipe(replace('MmmToolsNamespace', mmmsage.tools_namespace));
+    //.pipe(replace('@core_version@', mmmsage.core_version));
   gulp.src('./templates/**').pipe(gulp.dest('dist/templates/'));
   gulp.src('./*.php').pipe(gulp.dest('dist/'));
   gulp.src('./style.css').pipe(gulp.dest('dist/'));
