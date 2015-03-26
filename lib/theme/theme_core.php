@@ -159,34 +159,34 @@ class MMM_Roots
 		}
 
 		switch($_REQUEST['fn']){
-		case 'contact':
+		// case 'contact':
 			
-			$data_back = $_REQUEST['contact'];
+		// 	$data_back = $_REQUEST['contact'];
 					
-			$data = array();
-			$i = 0;
-			foreach ($data_back as $field)
-			{
-				$data[$field['name']] = $field['value'];
-			}
+		// 	$data = array();
+		// 	$i = 0;
+		// 	foreach ($data_back as $field)
+		// 	{
+		// 		$data[$field['name']] = $field['value'];
+		// 	}
 
-			if ($data['honey'] == '1' && $data['terms'] == '')
-			{
-				$emailTemplate = "%s says:<br /> %s<br /><br />- %s";
+		// 	if ($data['honey'] == '1' && $data['terms'] == '')
+		// 	{
+		// 		$emailTemplate = "%s says:<br /> %s<br /><br />- %s";
 
-				$name = $data['name'];
-				$contact = $data['contact'];
-				$message = $data['message'];
+		// 		$name = $data['name'];
+		// 		$contact = $data['contact'];
+		// 		$message = $data['message'];
 
-				$emailBody = sprintf($emailTemplate, $name, $message, $contact);
+		// 		$emailBody = sprintf($emailTemplate, $name, $message, $contact);
 
-				$toEmail = $this->get_setting('business_email');
-				$subject = "Website Message";
+		// 		$toEmail = $this->get_setting('business_email');
+		// 		$subject = "Website Message";
 
 
-				SendMail($toEmail, $subject, $toEmail, $emailBody);
-			}
-		break;
+		// 		SendMail($toEmail, $subject, $toEmail, $emailBody);
+		// 	}
+		// break;
 		}
 	}
     
@@ -324,4 +324,11 @@ function MMM_Roots_Init()
 {
     global $MMM_Roots;
     $MMM_Roots = new MMM_Roots();
+
+    global $MMM_Data_Library;
+	if ($MMM_Data_Library == null)
+	{
+		$MMM_Data_Library = array();
+	}
+	array_push($MMM_Data_Library, $MMM_Roots);
 }
