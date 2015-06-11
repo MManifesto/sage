@@ -31,4 +31,13 @@
 
 	remove_filter( 'the_content', 'wpautop' );
 	add_filter( 'the_content', 'wpautop' , 12);
+
+	// Change login Logo
+	// function my_custom_login_logo() {
+	//     echo '<style type="text/css">
+	//         h1 a { background-image:url('.get_bloginfo('template_directory').'/images/custom-login-logo.gif) !important; }
+	//     </style>';
+	// }
+
+	// add_action('login_head', 'my_custom_login_logo');
 ?>
