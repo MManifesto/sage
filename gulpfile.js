@@ -6,9 +6,12 @@ var browserSync = require('browser-sync');
 var gulp        = require('gulp');
 var lazypipe    = require('lazypipe');
 var merge       = require('merge-stream');
+var zip         = require('gulp-zip');
+//var replace     = require('gulp-replace');
+var mmmsage     = require('./package.json');
 
 // See https://github.com/austinpray/asset-builder
-var manifest = require('asset-builder')('./assets/manifest.json');
+var manifest = require('asset-builder')('./dev-assets/manifest.json');
 
 // `path` - Paths to base asset directories. With trailing slashes.
 // - `path.source` - Path to the source files. Default: `assets/`
@@ -249,6 +252,27 @@ gulp.task('wiredep', function() {
       hasChanged: $.changed.compareSha1Digest
     }))
     .pipe(gulp.dest(path.source + 'styles'));
+});
+
+gulp.task('distClean', require('del').bind(null, ['dist/']));
+
+gulp.task('dist', ['distClean'], function() {
+
+  gulp.src(['./assets/**']).pipe(gulp.dest('dist/assets/'));
+  gulp.src('./lib/**').pipe(gulp.dest('dist/lib/'));
+    //.pipe(replace('MmmToolsNamespace', mmmsage.tools_namespace));
+    //.pipe(replace('@core_version@', mmmsage.core_version));
+  gulp.src('./templates/**').pipe(gulp.dest('dist/templates/'));
+  gulp.src('./*.php').pipe(gulp.dest('dist/'));
+  gulp.src('./style.css').pipe(gulp.dest('dist/'));
+  gulp.src('./screenshot.png').pipe(gulp.dest('dist/'));
+
+});
+
+gulp.task('zip', function(){
+  gulp.src('dist/**')
+        .pipe(zip('mmm-sage.zip'))
+        .pipe(gulp.dest('./'));
 });
 
 // ### Gulp

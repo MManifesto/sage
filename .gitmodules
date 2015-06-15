@@ -1,0 +1,3 @@
+[submodule "lib/theme/tools"]
+	path = lib/theme/tools
+	url = https://github.com/MManifesto/MmmToolsNamespace

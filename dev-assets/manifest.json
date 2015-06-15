@@ -3,14 +3,12 @@
     "main.js": {
       "files": [
         "scripts/main.js"
-      ],
-      "main": true
+      ]
     },
     "main.css": {
       "files": [
         "styles/main.less"
-      ],
-      "main": true
+      ]
     },
     "editor-style.css": {
       "files": [
@@ -24,7 +22,11 @@
       "bower": ["modernizr"]
     }
   },
+  "paths": {
+    "source": "dev-assets/",
+    "dist": "assets/"
+  },
   "config": {
-    "devUrl": "example.dev"
+    "devUrl": "localhost:8888"
   }
 }
