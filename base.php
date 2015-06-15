@@ -1,13 +1,13 @@
 <?php
 
-namespace Roots\Sage;
-
 use Roots\Sage\Config;
 use Roots\Sage\Wrapper;
 
 ?>
 
-<?php get_template_part('templates/head'); ?>
+<!doctype html>
+<html class="no-js" <?php language_attributes(); ?>>
+  <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
     <!--[if lt IE 9]>
       <div class="alert alert-warning">
@@ -31,6 +31,7 @@ use Roots\Sage\Wrapper;
       </div><!-- /.content -->
     </div><!-- /.wrap -->
     <?php
+      do_action('get_footer');
       get_template_part('templates/footer');
       wp_footer();
     ?>
