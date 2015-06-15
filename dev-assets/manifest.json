@@ -7,19 +7,16 @@
     },
     "main.css": {
       "files": [
-<<<<<<< HEAD:dev-assets/manifest.json
         "styles/main.less"
       ]
-=======
-        "styles/main.scss"
-      ],
-      "main": true
->>>>>>> upstream/master:assets/manifest.json
     },
     "editor-style.css": {
       "files": [
-        "styles/editor-style.scss"
+        "styles/editor-style.less"
       ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
     },
     "modernizr.js": {
       "bower": ["modernizr"]
@@ -30,10 +27,6 @@
     "dist": "assets/"
   },
   "config": {
-<<<<<<< HEAD:dev-assets/manifest.json
     "devUrl": "localhost:8888"
-=======
-    "devUrl": "http://example.dev"
->>>>>>> upstream/master:assets/manifest.json
   }
 }

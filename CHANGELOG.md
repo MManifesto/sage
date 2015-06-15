@@ -1,42 +1,5 @@
 ### HEAD
-* Add search templates ([#1459](https://github.com/roots/sage/issues/1459))
-
-### 8.2.1: May 7th, 2015
-* Update BrowserSync ([#1457](https://github.com/roots/sage/issues/1457))
-* Bump dependencies ([#1448](https://github.com/roots/sage/issues/1448))
-* Allow revved files to resolve in development if they exist ([#1456](https://github.com/roots/sage/issues/1456))
-* Disable advanced minification features to fix incorrect file path in compiled CSS ([#1452](https://github.com/roots/sage/issues/1452))
-* Fix Glyphicon font path ([#1455](https://github.com/roots/sage/issues/1455))
-
-### 8.2.0: April 29th, 2015
-* Use Sass Bootstrap by default ([#1437](https://github.com/roots/sage/issues/1437))
-* Remove nav walker and Bootstrap navbar ([#1427](https://github.com/roots/sage/issues/1427))
-* Remove Bootstrap gallery ([#1421](https://github.com/roots/sage/issues/1421))
-* Remove hardcoded feed link ([#1426](https://github.com/roots/sage/issues/1426))
-* Move jQuery CDN feature to Soil ([#1422](https://github.com/roots/sage/issues/1422))
-* Bump `gulp-load-plugins` to 0.10.0 ([#1419](https://github.com/roots/sage/issues/1419))
-* Switch from [yargs](https://github.com/bcoe/yargs) to [minimist](https://github.com/substack/minimist) ([#1418](https://github.com/roots/sage/issues/1418))
-* Remove `$content_width` ([#1417](https://github.com/roots/sage/issues/1417))
-* Lowercase `X-UA-Compatible` ([#1409](https://github.com/roots/sage/issues/1409))
-* Remove mention of Google Analytics from the config ([#1384](https://github.com/roots/sage/issues/1384))
-
-### 8.1.1: March 31st, 2015
-* Remove pleeease dependency in favor of vanilla gulp-autoprefixer and gulp-minify-css ([#1402](https://github.com/roots/sage/issues/1402))
-* Fix `gulp --production` race condition ([#1398](https://github.com/roots/sage/issues/1398))
-* Update to Bootstrap 3.3.4 ([#1387](https://github.com/roots/sage/issues/1387))
-
-### 8.1.0: March 13th, 2015
-* Move HTML5 Boilerplate's Google Analytics snippet to Soil ([#1382](https://github.com/roots/sage/issues/1382))
-* Run `gulp build` if `bower.json` is changed ([#1378](https://github.com/roots/sage/issues/1378))
-* Remove namespace from base.php ([#1372](https://github.com/roots/sage/issues/1372))
-* Allow build directory to be customized ([#1352](https://github.com/roots/sage/issues/1352), [#1366](https://github.com/roots/sage/issues/1366))
-* Update ConditionalTagCheck and usage docs ([#1365](https://github.com/roots/sage/issues/1365))
-* Change default gallery columns to 3 ([#1364](https://github.com/roots/sage/issues/1364))
-* Apply `script_loader_src` filter to jQuery fallback ([#1363](https://github.com/roots/sage/issues/1363))
-
-### 8.0.1: February 26th, 2015
-* Update asset-builder version to fix Windows compatibility ([#1351](https://github.com/roots/sage/issues/1351))
-* Fix broken wiredep imports with main.scss.example ([Discussion](https://discourse.roots.io/t/issue-with-sage-sass-version/2962))
+* Fixes broken wiredep imports with main.scss.example ([original issue](https://discourse.roots.io/t/issue-with-sage-sass-version/2962))
 
 ### 8.0.0: February 25th, 2015
 * Change theme name from Roots to Sage
