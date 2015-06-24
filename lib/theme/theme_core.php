@@ -65,8 +65,8 @@ class MMM_Roots
 
 	function custom_dashboard_css()
 	{
-		wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/fontawesome.css', false, null);
-		wp_enqueue_style('mmm_roots_dashboard', get_template_directory_uri() . '/assets/css/dashboard.css', false, null);
+		// wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/main.css', false, null);
+		// wp_enqueue_style('mmm_roots_dashboard', get_template_directory_uri() . '/assets/css/dashboard.css', false, null);
 	}
 
 	function custom_metabox(){
@@ -97,7 +97,7 @@ class MMM_Roots
 
 		$values = get_post_meta($post->ID, $this->_meta_key, true);
 
-        \MmmToolsNamespace\load_admin_assets();
+        \MmmToolsNamespace\load_postmeta_assets();
 
 		include_once('ui/meta_post_ui.php');
 	}
@@ -113,10 +113,6 @@ class MMM_Roots
         if (!$this->check_user_capability()) {
             wp_die( __('You do not have sufficient permissions to access this page.') );
         }
-        
-        wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', false, null);
-        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/plugins.js', false, null);
-        wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/js/vendor/jquery-1.7.1.min.js', false, null);
         
         \MmmToolsNamespace\load_admin_assets();
 

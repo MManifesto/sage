@@ -20,6 +20,9 @@
     },
     "modernizr.js": {
       "bower": ["modernizr"]
+    },
+    "bootstrap.js": {
+      "bower": ["bootstrap"]
     }
   },
   "paths": {

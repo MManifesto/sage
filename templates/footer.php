@@ -9,11 +9,11 @@
                 <img class="brand-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/footer-logo.png" title="<?php bloginfo('name'); ?>" />
             </a>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-2">
           <div class="contact-info email"><i class="fa fa-comment-o"></i> <a href="#">info@durum.ca</a></div>
           <div class="contact-info phone"><i class="fa fa-phone"></i> <a href="#">403.541.5303</a></div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-2">
           <div class="contact-info address">
             <i class="fa fa-map-marker column"></i>
             <a href="#">

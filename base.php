@@ -23,5 +23,15 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/footer');
       wp_footer();
     ?>
+
+  <script type="text/javascript">  
+  $.ready(function() {
+    // ------------------------------------
+    // FlexSlider
+    // ------------------------------------
+    $('.carousel').carousel();
+  });
+  </script>
+
   </body>
 </html>
