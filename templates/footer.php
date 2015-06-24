@@ -1,3 +1,11 @@
+<?php
+
+
+global $MMM_Roots;
+$brand_logo = $MMM_Roots->get_setting("footer_logo");
+
+?>
+
 <footer class="content-info" role="contentinfo">
   <div class="container">
     <?php dynamic_sidebar('sidebar-footer'); ?>
@@ -6,7 +14,7 @@
       <div class="row">
         <div class="col-sm-2">
             <a class="navbar-brand img-responsive" href="<?= esc_url(home_url('/')); ?>">
-                <img class="brand-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/footer-logo.png" title="<?php bloginfo('name'); ?>" />
+                <img class="brand-logo" src="<?php echo $brand_logo; ?>" title="<?php bloginfo('name'); ?>" />
             </a>
         </div>
         <div class="col-sm-2">

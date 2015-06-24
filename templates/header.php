@@ -1,10 +1,15 @@
-<?php use Roots\Sage\Nav; ?>
+<?php use Roots\Sage\Nav;
+
+
+global $MMM_Roots;
+$brand_logo = $MMM_Roots->get_setting("brand_logo");
+?>
 
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
   <div class="container">
     <div class="row-fluid">
       <div class="col-sm-12 brand-wrapper">
-        <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><img class="brand-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" title="<?php bloginfo('name'); ?>" /></a>
+        <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><img class="brand-logo" src="<?php echo $brand_logo; ?>" title="<?php bloginfo('name'); ?>" /></a>
       </div>
     </div>
   </div>
