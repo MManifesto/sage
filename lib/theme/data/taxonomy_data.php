@@ -12,6 +12,7 @@
 
 	$jumbotronTemplates = array(1 => "Text Centered");
 	$headerTemplates = array(1 => "Wide", 2 => "Narrow");
+	$contentWidth = array(2 => "75%", 1 => "50%", 3 => "100%");
 
 	$taxonomies = array(
 		array('slug' => 'post',
@@ -24,28 +25,9 @@
 							'name' => 'General Options',
 							'size' => '12',
 							'fields' => array(
-								array('id' => 'tagline',
-									'label' => 'Tagline',
-									'type' => 'text'),
-								array('id' => 'image',
+								array('id' => 'background image',
 									'label' => 'Image',
 									'type' => 'image'),
-								array('id' => 'css_class',
-									'label' => 'CSS Class',
-									'type' => 'text')
-							)
-						),
-						array('name' => 'Jumbotron Options',
-							'size' => '12',
-							'fields' => array(
-								array('id' => 'readmoretext',
-									'label' => 'Read More Text',
-									'type' => 'text',
-									'options' => array("note" => 'Leaving this blank will result in the default value of "Read More"')),
-								array('id' => 'blurb',
-									'label' => 'Blurb',
-									'type' => 'textarea',
-									'options' => array("note" => 'Leaving this blank will result in the first 25 characters of the post content being used.')),
 								array('id' => 'jumbotron-template',
 									'label' => 'Jumbotron Templates',
 									'type' => 'select',
@@ -73,24 +55,29 @@
 								array('id' => 'tagline',
 									'label' => 'Tagline',
 									'type' => 'editor'),
-								array('id' => 'image',
-									'label' => 'Image',
-									'type' => 'image'),
-								array('id' => 'css_class',
-									'label' => 'CSS Class',
-									'type' => 'text'),
 								array('id' => 'header-template',
-									'label' => 'Header Templates',
+									'label' => 'Header Style',
 									'type' => 'select',
 									'options' => array("data" => $headerTemplates)),
 								array('id' => 'section-height',
-									'label' => 'Custom Height',
+									'label' => 'Header Height',
 									'type' => 'text',
 									'options' => array("note" => "e.g. 300px")),
 								array('id' => 'body-margin',
-									'label' => 'Custom Top Margin',
+									'label' => 'Header Text Top Margin',
 									'type' => 'text',
 									'options' => array("note" => "e.g. 250px")),
+								array('id' => 'image',
+									'label' => 'Header Background Image',
+									'type' => 'image'),
+								array('id' => 'background-position',
+									'label' => 'Header Background Position',
+									'type' => 'text',
+									'options' => array("note" => "e.g. 0 100px or top or bottom")),
+								array('id' => 'content-width',
+									'label' => 'Page Content Width',
+									'type' => 'select',
+									'options' => array("data" => $contentWidth)),
 							)
 						)
 					)

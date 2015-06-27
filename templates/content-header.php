@@ -6,6 +6,7 @@ $post = get_post($post_id);
 $tagline = $MMM_Roots->get_post_meta($post->ID, "tagline", true);
 $image = $MMM_Roots->get_post_meta($post->ID, "image", true);
 $template = $MMM_Roots->get_post_meta($post->ID, "header-template", true);
+$position = $MMM_Roots->get_post_meta($post->ID, "background-position", true);
 $height = $MMM_Roots->get_post_meta($post->ID, "section-height", true);
 $margin = $MMM_Roots->get_post_meta($post->ID, "body-margin", true);
 
@@ -13,11 +14,18 @@ $wrapperClass = "";
 $slideClass = "";
 $customHeight = "";
 $customMargin = "";
+$customPosition = "";
+$customPositionTemplate = " background-position: %s;";
 
 if ($template != 1)
 {
     $wrapperClass = " header-narrow";
     $slideClass = " container";
+}
+
+if ($position != "")
+{
+    $customPosition = sprintf($customPositionTemplate, $position);
 }
 
 if ($height != "")
@@ -32,9 +40,9 @@ if ($margin != "")
 
 ?>
 
-<section id="section-header" class="section-content section-header clearfix slider<?php echo $wrapperClass; ?>">
+<section id="section-header" class="section-content section-header clearfix slider<?php echo $wrapperClass;?>">
 
-<div class="header-slide<?php echo $slideClass; ?>" style="background-image: url('<?php echo $image; ?>');<?php echo $customHeight; ?>">
+<div class="header-slide<?php echo $slideClass; ?>" style="background-image: url('<?php echo $image; ?>');<?php echo $customHeight; ?><?php echo $customPosition; ?>">
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 slide-body"<?php echo $customMargin; ?>>

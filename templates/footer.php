@@ -22,14 +22,12 @@ $address = $MMM_Roots->get_setting("address");
         </div>
         <div class="col-sm-3">
           <div class="contact-info email"><i class="fa fa-comment-o"></i> <a href="mailto: <?php echo $email; ?>"><?php echo $email; ?></a></div>
-          <div class="contact-info phone"><i class="fa fa-phone"></i> <a href="#"><?php echo $phone; ?></a></div>
+          <div class="contact-info phone"><i class="fa fa-phone"></i> <?php echo $phone; ?></div>
         </div>
         <div class="col-sm-3">
           <div class="contact-info address">
             <i class="fa fa-map-marker column"></i>
-            <a href="#">
-              <?php echo $address; ?>            
-            </a>
+            <?php echo $address; ?>            
           </div>
         </div>
       </div>
