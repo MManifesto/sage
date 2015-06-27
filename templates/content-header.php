@@ -25,7 +25,7 @@ if ($height != "")
     $customHeight = sprintf('height: %s;', $height);
 }
 
-if ($height != "")
+if ($margin != "")
 {
     $customMargin = sprintf('style="margin-top: %s;"', $margin);
 }
@@ -37,7 +37,7 @@ if ($height != "")
 <div class="header-slide<?php echo $slideClass; ?>" style="background-image: url('<?php echo $image; ?>');<?php echo $customHeight; ?>">
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 slide-body"<?php echo $customMargin; ?>>
+            <div class="col-sm-8 col-sm-offset-2 slide-body"<?php echo $customMargin; ?>>
                 <div class="slide-heading">
                     <?php echo $tagline ?>
                 </div>
