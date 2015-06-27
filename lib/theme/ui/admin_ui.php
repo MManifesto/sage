@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h3>MMM Roots Options</h3>
+				<h3>MMM Sage Options</h3>
 			</div>
 		</div>
 
@@ -17,8 +17,9 @@
 				echo MmmToolsNamespace\OutputThemeData($theme_options, null, $MMM_Roots);
 			?>
 			
-			<div class="row form-controls">
+			<div class="form-controls">
 				<div class="col-sm-12">
+					<hr />
 					<div class="form-actions clearfix">
 						<a href="#" id="btnOptionsSave" name="mmm_settings_saved" class="btn btn-primary">Save</a>
 						<input type="reset" class="btn" />

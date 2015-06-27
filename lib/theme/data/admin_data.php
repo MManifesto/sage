@@ -17,7 +17,7 @@ use \MmmToolsNamespace as tools;
 			'icon' => 'cog',
 			'sections' => array(
 				array(
-					'name' => 'General Options',
+					'name' => 'Brand Options',
 					'size' => '6',
 					'fields' => array(
 						array('id' => 'brand_logo',
@@ -25,28 +25,27 @@ use \MmmToolsNamespace as tools;
 							'type' => 'image'),
 						array('id' => 'footer_logo',
 							'label' => 'Footer / Brand Logo',
-							'type' => 'image'),
-						array('id' => 'title_options',
-							  'label' => 'Site Title',
-							  'type' => 'select',
-							  'options' => array("note" => "Note: This will determine how the site brand  alongside the navigation is displayed", "data" => $titleOptions)
-							),
-						array('id' => 'search_in_navigation',
-							  'label' => 'Search In Navigation',
-							  'type' => 'checkbox',
-							  'options' => array("note" => "Note: When enabled a searchbar will appear in the navigation")
-							),
-						array('id' => 'footer_text',
-							'label' => 'Footer Text',
+							'type' => 'image')
+					)
+				),
+				array(
+					'name' => 'Contact Information',
+					'size' => '6',
+					'fields' => array(
+						array('id' => 'email',
+							'label' => 'Email',
+							'type' => 'text'),
+						array('id' => 'phone',
+							'label' => 'Phone',
+							'type' => 'text'),
+						array('id' => 'address',
+							'label' => 'Address',
 							'type' => 'textarea',
-							'options' => array("class" => "col-lg-12")),
-						array('id' => 'icon_default',
-							'label' => 'Default Icon',
-							'type' => 'select',
-							'options' => array("class" => 'font-awesome', "data" => tools\getFontAwesomeSelectArray()))
+							'options' => array("class" => "col-lg-10")
+							),
+						)
 					)
 				)
 			)
-		)
-	);
+		);
 ?>

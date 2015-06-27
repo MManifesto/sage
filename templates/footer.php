@@ -3,6 +3,9 @@
 
 global $MMM_Roots;
 $brand_logo = $MMM_Roots->get_setting("footer_logo");
+$email = $MMM_Roots->get_setting("email");
+$phone = $MMM_Roots->get_setting("phone");
+$address = $MMM_Roots->get_setting("address");
 
 ?>
 
@@ -18,15 +21,14 @@ $brand_logo = $MMM_Roots->get_setting("footer_logo");
             </a>
         </div>
         <div class="col-sm-3">
-          <div class="contact-info email"><i class="fa fa-comment-o"></i> <a href="#">info@durum.ca</a></div>
-          <div class="contact-info phone"><i class="fa fa-phone"></i> <a href="#">403.541.5303</a></div>
+          <div class="contact-info email"><i class="fa fa-comment-o"></i> <a href="mailto: <?php echo $email; ?>"><?php echo $email; ?></a></div>
+          <div class="contact-info phone"><i class="fa fa-phone"></i> <a href="#"><?php echo $phone; ?></a></div>
         </div>
         <div class="col-sm-3">
           <div class="contact-info address">
             <i class="fa fa-map-marker column"></i>
             <a href="#">
-              500,&nbsp;1414 - 8&nbsp;Street&nbsp;SW<br />
-              Calgary,&nbsp;Alberta T2R&nbsp;1J6
+              <?php echo $address; ?>            
             </a>
           </div>
         </div>
