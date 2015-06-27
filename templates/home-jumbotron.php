@@ -1,7 +1,7 @@
 <?php
 global $MMM_Roots;
 
-$jumbotronCategory = 'jumbotron';
+$jumbotronCategory = 'Jumbotron';
 $jumbotronCount = 5;
 ?>
 
@@ -10,7 +10,7 @@ $jumbotronCount = 5;
 
 <div class="carousel-inner" role="listbox">
 <?php
-$posts = get_posts( "category=" . $jumbotronCategory . "&numberposts=" . $jumbotronCount);
+$posts = get_posts( "category_name=" . $jumbotronCategory . "&numberposts=" . $jumbotronCount);
 
 $i = 1;
 $active = "active";

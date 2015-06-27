@@ -1,14 +1,14 @@
 <?php
 /**
- * Template Name: Header Page
+ * Template Name: Staff
  */
 ?>
-<?php get_template_part('templates/content', 'header'); ?>
+<?php get_template_part('templates/page', 'header'); ?>
 
 <div class="wrap container" role="document">
   <div class="content row">
-    <div class="col-md-offset-2 col-sm-8">
+    <main class="main" role="main">
         <?php wp_reset_postdata(); the_content(); ?>
-    </div>
+    </main><!-- /.main -->
   </div><!-- /.content -->
 </div><!-- /.wrap -->
