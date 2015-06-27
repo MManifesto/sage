@@ -11,6 +11,7 @@
 	*/
 
 	$jumbotronTemplates = array(1 => "Text Centered");
+	$headerTemplates = array(1 => "Wide", 2 => "Narrow");
 
 	$taxonomies = array(
 		array('slug' => 'post',
@@ -29,10 +30,9 @@
 								array('id' => 'image',
 									'label' => 'Image',
 									'type' => 'image'),
-								array('id' => 'sections',
-									'label' => 'Sections',
-									'type' => 'select',
-									'options' => array("data" => MmmToolsNamespace\getTaxonomySelectArray("page-section"), "isMultiple" => true, "updateRegion" => true))
+								array('id' => 'css_class',
+									'label' => 'CSS Class',
+									'type' => 'text')
 							)
 						),
 						array('name' => 'Jumbotron Options',
@@ -66,20 +66,31 @@
 							'name' => 'General Options',
 							'size' => '6',
 							'fields' => array(
+								array('id' => 'tagline-title',
+									'label' => 'Tagline-title',
+									'type' => 'html',
+									'options' => array('data' => "<strong>Header Content</strong>")),
 								array('id' => 'tagline',
 									'label' => 'Tagline',
-									'type' => 'text'),
-								array('id' => 'icon',
-									'label' => 'Icon',
-									'type' => 'select',
-									'options' => array("class" => 'font-awesome', "data" => MmmToolsNamespace\getFontAwesomeSelectArray())),
+									'type' => 'editor'),
 								array('id' => 'image',
 									'label' => 'Image',
 									'type' => 'image'),
-								array('id' => 'sections',
-									'label' => 'Sections',
+								array('id' => 'css_class',
+									'label' => 'CSS Class',
+									'type' => 'text'),
+								array('id' => 'header-template',
+									'label' => 'Header Templates',
 									'type' => 'select',
-									'options' => array("data" => MmmToolsNamespace\getTaxonomySelectArray("page-section"), "isMultiple" => true, "updateRegion" => true))
+									'options' => array("data" => $headerTemplates)),
+								array('id' => 'section-height',
+									'label' => 'Custom Height',
+									'type' => 'text',
+									'options' => array("note" => "e.g. 300px")),
+								array('id' => 'body-margin',
+									'label' => 'Custom Top Margin',
+									'type' => 'text',
+									'options' => array("note" => "e.g. 250px")),
 							)
 						)
 					)

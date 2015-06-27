@@ -24,7 +24,7 @@ foreach ($posts as $jumbotron)
 	$image = $MMM_Roots->get_post_meta($jumbotron->ID, "image", true);
 ?>
 
-<div class="durumslide item <?php echo $active; ?>" style="background-image: url('<?php echo $image; ?>')">
+<div class="carousel-slide item <?php echo $active; ?>" style="background-image: url('<?php echo $image; ?>')">
     <div class="container">
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1 slide-body">
