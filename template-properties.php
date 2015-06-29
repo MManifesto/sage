@@ -26,8 +26,16 @@ $properties = get_posts( "category_name=" . $propertyCategory . "&numberposts=" 
 
                     $title = $property->post_title;
                     $image = $MMM_Roots->get_post_meta($property->ID, "image", true);
+                    $propertylink = $MMM_Roots->get_post_meta($property->ID, "property-link", true);
+                    $link = "javascript: void(0);";
+
+                    if ($propertylink == "")
+                    {
+                        $link = $propertylink;
+                    }
+
                     ?>
-                    <a href="javascript: void(0);" class="col-sm-6 property" style="background-image: url('<?php echo $image; ?>')">
+                    <a href="<?php echo $link; ?>" class="col-sm-6 property" style="background-image: url('<?php echo $image; ?>')">
                         <div class="property-container">
                             <div class="property-details <?php echo $cssClass; ?>">
                                 <h4><?php echo $title; ?></h4>

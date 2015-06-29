@@ -6,12 +6,24 @@
 
 body {
     font-family: Roboto;
+    background: #000;
+}
+
+.content-wrapper {
+    background: #fff;
 }
 
 h1,h2,h3,h4,h5,h6 {
     font-family: Abel;
     margin-top: 0px;
     text-transform: uppercase;
+}
+
+h4 {color: #999;}
+h5 {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 1em;
 }
 
 a:hover {text-decoration: none;}
@@ -39,7 +51,7 @@ header.navbar {
 
 .content .boxed {
     background-color: #dad9d7;
-    padding: 20px 15px;
+    padding: 30px;
 }
 
 footer {
@@ -78,6 +90,58 @@ footer .column {
 
 /* Slider Styles */
 
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+/*
+WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+now override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
+
 .slider {
     color: #fff;
     margin: 0 0 40px;
@@ -86,7 +150,6 @@ footer .column {
 .carousel-slide {
     background-size: cover;
     background-position: bottom;
-    height: 600px;
 }
 
 .header-slide {
@@ -111,10 +174,6 @@ footer .column {
     color: rgba(255,255,255,0.5);
 }
 
-.carousel-slide .slide-body {
-    margin-top: 260px;
-}
-
 .header-slide .slide-body {
     margin-top: 150px;
 }
@@ -123,7 +182,11 @@ footer .column {
     font-family: Abel;
 }
 
-.small-quote {font-size: 0.8em;}
+.small-quote {
+    font-size: 0.7em;
+    float: right;
+    margin-top: 10px;
+}
 
 .carousel-slide .slide-heading {    
     font-size: 60px;
@@ -133,7 +196,7 @@ footer .column {
 }
 
 .header-slide .slide-heading {
-    font-size: 30px;
+    font-size: 28px;
     text-align: center;
 }
 
@@ -198,12 +261,35 @@ footer .column {
     transition:visibility 0s linear 0.5s,opacity 0.5s linear;
 }
 
-.staff-details h4 {color: #999;}
-
 
 /* Media Queries */
-@media (max-width: 1000px)
+@media (min-width: 1201px)
 {
+    .carousel-slide {
+        height: 800px;
+    }
+
+    .carousel-slide .slide-heading {
+        font-size: 80px;
+        margin-top: -15px;
+    }
+
+    .carousel-slide .slide-body {
+        margin-top: 380px;
+    }
+}
+
+
+@media (max-width: 1200px)
+{
+    .carousel-slide {
+        height: 600px;
+    }
+
+    .carousel-slide .slide-body {
+        margin-top: 260px;
+    }
+
     .carousel-slide .slide-heading {
         padding-top: 15px;
         font-size: 40px;
@@ -217,6 +303,14 @@ footer .column {
 
 @media (max-width: 500px)
 {
+    .carousel-slide {
+        height: 300px;        
+    }
+
+    .carousel-slide .slide-body {
+      margin-top: 120px;
+    }
+
     .carousel-slide .slide-heading {
         font-size: 30px;
     }

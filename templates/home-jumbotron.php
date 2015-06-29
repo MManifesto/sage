@@ -6,7 +6,7 @@ $jumbotronCount = 5;
 ?>
 
 <section class="section-content section-jumbotron clearfix slider" id="section-jumbotron">
-    <div id="home-jumobotron" class="carousel slide" data-ride="carousel">
+    <div id="home-jumobotron" class="carousel slide carousel-fade" data-ride="carousel">
 
 <div class="carousel-inner" role="listbox">
 <?php

@@ -25,13 +25,16 @@
 							'name' => 'General Options',
 							'size' => '12',
 							'fields' => array(
-								array('id' => 'background image',
+								array('id' => 'image',
 									'label' => 'Image',
 									'type' => 'image'),
 								array('id' => 'jumbotron-template',
 									'label' => 'Jumbotron Templates',
 									'type' => 'select',
-									'options' => array("data" => $jumbotronTemplates))
+									'options' => array("data" => $jumbotronTemplates)),
+								array('id' => 'property-link',
+									'label' => 'Property Link',
+									'type' => 'text')
 							)
 						)
 					)
