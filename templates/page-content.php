@@ -15,6 +15,9 @@ switch ($width)
     case 3:
         $contentWidth = "col-sm-12";
     break;
+    case 4:
+        $contentWidth = "col-md-offset-1 col-sm-10";
+    break;
 }
 
 ?>

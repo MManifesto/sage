@@ -12,7 +12,7 @@
 
 	$jumbotronTemplates = array(1 => "Text Centered");
 	$headerTemplates = array(1 => "Wide", 2 => "Narrow");
-	$contentWidth = array(2 => "75%", 1 => "50%", 3 => "100%");
+	$contentWidth = array(2 => "60%", 1 => "50%", 3 => "100%", 4 => "75%");
 
 	$taxonomies = array(
 		array('slug' => 'post',
@@ -28,6 +28,10 @@
 								array('id' => 'image',
 									'label' => 'Image',
 									'type' => 'image'),
+								array('id' => 'background-position',
+									'label' => 'Image Position',
+									'type' => 'text',
+									'options' => array("note" => "e.g. 0 100px or top or bottom")),
 								array('id' => 'jumbotron-template',
 									'label' => 'Jumbotron Templates',
 									'type' => 'select',

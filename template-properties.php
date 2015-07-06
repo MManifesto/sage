@@ -29,7 +29,7 @@ $properties = get_posts( "category_name=" . $propertyCategory . "&numberposts=" 
                     $propertylink = $MMM_Roots->get_post_meta($property->ID, "property-link", true);
                     $link = "javascript: void(0);";
 
-                    if ($propertylink == "")
+                    if ($propertylink != "")
                     {
                         $link = $propertylink;
                     }

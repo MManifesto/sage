@@ -3,13 +3,15 @@
 .navbar-brand {float: none;}
 .navbar-nav {float: none; display: inline-block;}
 .nav-wrapper nav {text-align: center;}
+.nav>li {opacity: 0.8;}
+.nav>li.active {opacity: 1;}
 
-body {
+body.page {
     font-family: Roboto;
     background: #000;
 }
 
-.content-wrapper {
+body.page .content-wrapper {
     background: #fff;
 }
 
@@ -19,10 +21,9 @@ h1,h2,h3,h4,h5,h6 {
     text-transform: uppercase;
 }
 
-h4 {color: #999;}
+h4 {color: #999; clear: both;}
 h5 {
     font-family: Roboto;
-    font-weight: bold;
     font-size: 1em;
 }
 
@@ -38,18 +39,19 @@ header.navbar {
 }
 
 
-.content {
-    font-size: 16px;
+.page .content {
+    font-size: 15px;
     line-spacing: 18px;
+    min-height: 300px;
 }
 
-.content .padded {
+.page .content .padded {
     padding: 5px 30px 15px; 
     font-size: 18px;
     line-spacing: 20px;
 }
 
-.content .boxed {
+.page .content .boxed {
     background-color: #dad9d7;
     padding: 30px;
 }
@@ -183,13 +185,12 @@ now override the 3.3 new styles for modern browsers & apply opacity
 }
 
 .small-quote {
-    font-size: 0.7em;
-    float: right;
+    font-size: 14px;
     margin-top: 10px;
 }
 
 .carousel-slide .slide-heading {    
-    font-size: 60px;
+    font-size: 58px;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 2px;
@@ -241,18 +242,18 @@ now override the 3.3 new styles for modern browsers & apply opacity
 .staff-member {
     display: block;
     opacity: 0.7;
-    height: 150px;
-    min-width: 150px;
+    height: 125px;
+    min-width: 125px;
     margin-bottom: 30px;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 150px 150px;
+    background-size: 125px 125px;
     transition:visibility 0s linear 0.5s,opacity 0.5s linear;
 }
 .staff-member:hover {
     opacity: 1;
 }
-.staff-details-wrapper {clear: both; min-height: 300px;}
+.staff-details-wrapper {clear: both; min-height: 400px;}
 .staff-details {
     padding: 0 5px;
     position: absolute;
@@ -270,7 +271,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
     }
 
     .carousel-slide .slide-heading {
-        font-size: 80px;
+        font-size: 70px;
         margin-top: -15px;
     }
 

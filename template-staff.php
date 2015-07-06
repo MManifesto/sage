@@ -8,11 +8,11 @@ get_template_part('templates/content', 'header');
 
 $directorCategory = 'Director';
 $directorCount = 30;
-$directors = get_posts( "category_name=" . $directorCategory . "&numberposts=" . $directorCount);
+$directors = get_posts( "category_name=" . $directorCategory . "&numberposts=" . $directorCount . "&order=ASC");
 
 $staffCategory = 'Staff';
 $staffCount = 30;
-$staff = get_posts( "category_name=" . $staffCategory . "&numberposts=" . $staffCount);
+$staff = get_posts( "category_name=" . $staffCategory . "&numberposts=" . $staffCount . "&order=ASC");
 
 $team = array_merge($directors, $staff);
 
@@ -37,7 +37,7 @@ function hidden_details($posts)
     $output = "";
     $css_hooks = "";
     $post_template = '<div id="staff-details-%s" class="staff-details"><h4>%s</h4>%s</div>';
-    $css_hook_template = '#staff-image-%1$s:hover ~ .staff-details-wrapper #staff-details-%1$s, #staff-image-%1$s:active ~ .staff-details-wrapper #staff-details-%1$s {visibility: visible; opacity: 1; transition-delay:0s;}';
+    $css_hook_template = '#staff-image-%1$s:hover ~ .row .staff-details-wrapper #staff-details-%1$s, #staff-image-%1$s:active ~ .row .staff-details-wrapper #staff-details-%1$s {visibility: visible; opacity: 1; transition-delay:0s;}';
 
     foreach ($posts as $post) 
     {
@@ -56,13 +56,14 @@ function hidden_details($posts)
     <div class="container">
         <div class="row">
             <div class="staff-list col-sm-10 col-sm-offset-1">
-                <h3>Directors</h3>
+                <h4>Directors</h4>
                 <?php echo display_group($directors); ?>
-                <h3>The Durum Team</h3>
+                <h4>The Durum Team</h4>
                 <?php echo display_group($staff); ?>
-
-                <div class="staff-details-wrapper">
-                    <?php echo hidden_details($team); ?>
+                <div class="row">
+                    <div class="staff-details-wrapper col-sm-9">
+                        <?php echo hidden_details($team); ?>
+                    </div>
                 </div>
             </div>
         </div>
