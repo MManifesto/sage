@@ -4,7 +4,20 @@ global $MMM_Roots;
 $post_id = get_the_ID();
 $post = get_post($post_id);
 $tagline = $MMM_Roots->get_post_meta($post->ID, "tagline", true);
+
+$mobile = is_on_mobile();
 $image = $MMM_Roots->get_post_meta($post->ID, "image", true);
+
+if ($mobile)
+{
+    $mobileImage = $MMM_Roots->get_post_meta($post->ID, "mobile-image", true);
+    if ($mobileImage != "")
+    {
+        $image = $mobileImage;
+    }
+}
+
+
 $template = $MMM_Roots->get_post_meta($post->ID, "header-template", true);
 $position = $MMM_Roots->get_post_meta($post->ID, "background-position", true);
 $height = $MMM_Roots->get_post_meta($post->ID, "section-height", true);

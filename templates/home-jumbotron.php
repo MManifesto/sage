@@ -3,6 +3,9 @@ global $MMM_Roots;
 
 $jumbotronCategory = 'Jumbotron';
 $jumbotronCount = 5;
+
+$mobile = is_on_mobile();
+
 ?>
 
 <section class="section-content section-jumbotron clearfix slider" id="section-jumbotron">
@@ -22,6 +25,16 @@ foreach ($posts as $jumbotron)
         $active = "";
     }
 	$image = $MMM_Roots->get_post_meta($jumbotron->ID, "image", true);
+
+    if ($mobile)
+    {
+        $mobileImage = $MMM_Roots->get_post_meta($jumbotron->ID, "mobile-image", true);
+        if ($mobileImage != "")
+        {
+            $image = $mobileImage;
+        }
+    }
+
     $position = $MMM_Roots->get_post_meta($jumbotron->ID, "background-position", true);
 
     $customPosition = "";

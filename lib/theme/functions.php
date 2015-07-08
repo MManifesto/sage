@@ -40,4 +40,20 @@
 	// }
 
 	// add_action('login_head', 'my_custom_login_logo');
+
+	function is_on_mobile()
+	{
+		$is_on_mobile = false;
+
+		if (function_exists('is_handheld')) {
+
+		    if (is_handheld())
+		    {
+		    	$is_on_mobile = true;
+		    }
+		}
+
+		return $is_on_mobile;
+	}
+
 ?>
