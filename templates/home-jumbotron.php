@@ -4,12 +4,16 @@ global $MMM_Roots;
 $jumbotronCategory = 'Jumbotron';
 $jumbotronCount = 5;
 
+$transition_speed = $MMM_Roots->get_setting("transition_speed", 3000);
+
+
+
 $mobile = is_on_mobile();
 
 ?>
 
 <section class="section-content section-jumbotron clearfix slider" id="section-jumbotron">
-    <div id="home-jumobotron" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="home-jumobotron" class="carousel slide carousel-fade" data-ride="carousel" data-interval="<?php echo $transition_speed; ?>">
 
 <div class="carousel-inner" role="listbox">
 <?php

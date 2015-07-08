@@ -27,10 +27,9 @@ use Roots\Sage\Wrapper;
 
   <script type="text/javascript">  
   $.ready(function() {
-    // ------------------------------------
-    // FlexSlider
-    // ------------------------------------
-    $('.carousel').carousel();
+    $('.carousel').carousel({
+       interval: 3500
+      });
   });
   </script>
   </div>

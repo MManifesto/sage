@@ -42,10 +42,19 @@ use \MmmToolsNamespace as tools;
 							'label' => 'Address',
 							'type' => 'textarea',
 							'options' => array("class" => "col-lg-10")
-							),
 						)
+					)
+				),
+				array(
+					'name' => 'Jumbotron Options',
+					'size' => '6',
+					'fields' => array(
+						array('id' => 'transition_speed',
+							'label' => 'Transition Speed',
+							'type' => 'text')
 					)
 				)
 			)
-		);
+		)
+	);
 ?>
