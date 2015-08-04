@@ -1,7 +1,7 @@
 <?php
 global $MMM_Roots;
 
-$jumbotronCategory = 'Jumbotron';
+$jumbotronCategory = 'jumbotron';
 $jumbotronCount = 5;
 
 $transition_speed = $MMM_Roots->get_setting("transition_speed", 3000);
@@ -17,7 +17,7 @@ $mobile = is_on_mobile();
 
 <div class="carousel-inner" role="listbox">
 <?php
-$posts = get_posts( "category_name=" . $jumbotronCategory . "&numberposts=" . $jumbotronCount);
+$posts = get_posts( "post_type=" . $jumbotronCategory . "&numberposts=" . $jumbotronCount);
 
 $i = 1;
 $active = "active";

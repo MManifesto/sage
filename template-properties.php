@@ -7,7 +7,7 @@ global $MMM_Roots;
 
 $propertyCategory = 'Property';
 $propertyCount = 20;
-$properties = get_posts( "category_name=" . $propertyCategory . "&numberposts=" . $propertyCount);
+$properties = get_posts( "post_type=property" . "&numberposts=" . $propertyCount);
 
 ?>
 

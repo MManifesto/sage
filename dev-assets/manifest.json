@@ -10,6 +10,11 @@
         "styles/main.less"
       ]
     },
+    "dashboard.css": {
+      "files": [
+        "styles/dashboard.less"
+      ]
+    },
     "editor-style.css": {
       "files": [
         "styles/editor-style.less"

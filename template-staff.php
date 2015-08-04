@@ -6,17 +6,9 @@ global $MMM_Roots;
 
 get_template_part('templates/content', 'header');
 
-$directorCategory = 'Director';
-$directorCount = 30;
-$directors = get_posts( "category_name=" . $directorCategory . "&numberposts=" . $directorCount . "&order=ASC");
+$team = get_posts( "post_type=staff" . "&numberposts=" . -1 . "&order=ASC");
 
-$staffCategory = 'Staff';
-$staffCount = 30;
-$staff = get_posts( "category_name=" . $staffCategory . "&numberposts=" . $staffCount . "&order=ASC");
-
-$team = array_merge($directors, $staff);
-
-function display_group($posts)
+function display_group($posts, $display_type=1)
 {
     global $MMM_Roots;
     $output = "";
@@ -24,8 +16,12 @@ function display_group($posts)
 
     foreach ($posts as $post) 
     {
-        $image = $MMM_Roots->get_post_meta($post->ID, "image", true);
-        $output .= sprintf($post_template, $post->ID, $image, $post->post_title);
+        $type = $MMM_Roots->get_post_meta($post->ID, "staff-type", true);
+        if ($type == $display_type)
+        {
+            $image = $MMM_Roots->get_post_meta($post->ID, "image", true);
+            $output .= sprintf($post_template, $post->ID, $image, $post->post_title);
+        }
     }
 
     return $output;
@@ -57,9 +53,9 @@ function hidden_details($posts)
         <div class="row">
             <div class="staff-list col-sm-10 col-sm-offset-1">
                 <h4>Directors</h4>
-                <?php echo display_group($directors); ?>
+                <?php echo display_group($team, 1); ?>
                 <h4>The Durum Team</h4>
-                <?php echo display_group($staff); ?>
+                <?php echo display_group($team, 2); ?>
                 <div class="row">
                     <div class="staff-details-wrapper col-sm-9">
                         <?php echo hidden_details($team); ?>

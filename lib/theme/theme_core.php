@@ -65,8 +65,7 @@ class MMM_Roots
 
 	function custom_dashboard_css()
 	{
-		// wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/main.css', false, null);
-		// wp_enqueue_style('mmm_roots_dashboard', get_template_directory_uri() . '/assets/css/dashboard.css', false, null);
+		wp_enqueue_style('main', get_template_directory_uri() . '/assets/styles/dashboard.css', false, null);
 	}
 
 	function custom_metabox(){
