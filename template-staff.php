@@ -33,7 +33,7 @@ function hidden_details($posts)
     $output = "";
     $css_hooks = "";
     $post_template = '<div id="staff-details-%s" class="staff-details"><h4>%s</h4>%s</div>';
-    $css_hook_template = '#staff-image-%1$s:hover ~ .row .staff-details-wrapper #staff-details-%1$s, #staff-image-%1$s:active ~ .row .staff-details-wrapper #staff-details-%1$s {visibility: visible; opacity: 1; transition-delay:0s;}';
+    $css_hook_template = '#staff-image-%1$s:hover ~ .row .staff-details-wrapper #staff-details-%1$s, #staff-image-%1$s:active ~ .row .staff-details-wrapper #staff-details-%1$s, #staff-image-%1$s:hover ~ .row .staff-details-wrapper #staff-details-%1$s, #staff-image-%1$s:focus ~ .row .staff-details-wrapper #staff-details-%1$s {visibility: visible; opacity: 1; transition-delay:0s;}';
 
     foreach ($posts as $post) 
     {

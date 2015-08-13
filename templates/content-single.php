@@ -1,3 +1,7 @@
+<div class="wrap container" role="document">
+  <div class="content row">
+    <div class="col-sm-12">
+
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
     <header>
@@ -13,3 +17,7 @@
     <?php comments_template('/templates/comments.php'); ?>
   </article>
 <?php endwhile; ?>
+
+    </div>
+  </div><!-- /.content -->
+</div><!-- /.wrap -->
